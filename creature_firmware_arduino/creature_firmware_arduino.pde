@@ -77,8 +77,8 @@ void loop() {
   }
   
   for (int switchIndex = 0; switchIndex < TOTAL_SWITCHES; switchIndex++) {
-    int switchVal = !digitalRead(switches[switchIndex]);
-    Serial.print(switchVal == HIGH ? 0 : 1, BYTE);
+    int switchVal = digitalRead(switches[switchIndex]);
+    Serial.print(switchVal == HIGH ? 1 : 0, BYTE);
   }
   
   while (Serial.available()) {

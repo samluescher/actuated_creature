@@ -79,11 +79,6 @@ void loop() {
   for (int switchIndex = 0; switchIndex < TOTAL_SWITCHES; switchIndex++) {
     int switchVal = !digitalRead(switches[switchIndex]);
     Serial.print(switchVal == HIGH ? 0 : 1, BYTE);
-    if (switchVal == HIGH) {         // check if the input is HIGH (button released)
-      digitalWrite(13, LOW);  // turn LED OFF
-    } else {
-      digitalWrite(13, HIGH);  // turn LED ON
-    }
   }
   
   while (Serial.available()) {
